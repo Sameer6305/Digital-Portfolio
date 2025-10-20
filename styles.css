@@ -29,13 +29,13 @@
     --gradient-glass: linear-gradient(135deg, rgba(52, 211, 153, 0.06) 0%, rgba(220, 38, 38, 0.04) 100%);
     --gradient-bg: radial-gradient(ellipse at 30% 50%, #1e293b 0%, #0f172a 50%, #020617 100%);
     
-    /* Vibrant Shadows */
-    --shadow-sm: 0 2px 8px rgba(52, 211, 153, 0.15);
-    --shadow-md: 0 4px 16px rgba(52, 211, 153, 0.2);
-    --shadow-lg: 0 8px 32px rgba(52, 211, 153, 0.25);
-    --shadow-xl: 0 16px 48px rgba(52, 211, 153, 0.3);
-    --glow: 0 0 25px rgba(52, 211, 153, 0.35);
-    --glow-accent: 0 0 20px rgba(220, 38, 38, 0.3);
+    /* Vibrant Shadows - Ultra Sharp & Crisp */
+    --shadow-sm: 0 1px 3px rgba(52, 211, 153, 0.3);
+    --shadow-md: 0 2px 6px rgba(52, 211, 153, 0.4);
+    --shadow-lg: 0 3px 10px rgba(52, 211, 153, 0.5);
+    --shadow-xl: 0 4px 14px rgba(52, 211, 153, 0.55);
+    --glow: 0 0 3px rgba(52, 211, 153, 0.85);
+    --glow-accent: 0 0 3px rgba(220, 38, 38, 0.8);
     
     /* Transitions */
     --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -231,9 +231,23 @@ img {
 .sidebar {
     flex-shrink: 0;
     width: 340px;
-    height: fit-content;
+    position: -webkit-sticky;
     position: sticky;
-    top: 30px;
+    top: 20px;
+    bottom: 20px;
+    align-self: flex-start;
+    max-height: calc(100vh - 40px);
+    overflow: visible;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 0px;
+    display: none;
+}
+
+.sidebar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .sidebar-content {
