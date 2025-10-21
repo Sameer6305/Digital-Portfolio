@@ -1,102 +1,108 @@
-# 🚀 Modern Digital Portfolio
+# � Digital Portfolio
 
-A stunning, responsive digital portfolio website built from scratch with modern web technologies and smooth animations.
+A modern, responsive portfolio website featuring glassmorphism design, smooth animations, and an elegant user interface.
 
 ## ✨ Features
 
-### 🎨 Design
-- **Modern Glassmorphism UI** - Sleek, translucent design with blur effects
-- **Gradient Accents** - Beautiful purple-blue gradient color scheme
-- **Smooth Animations** - Scroll animations, hover effects, and transitions
-- **Fully Responsive** - Optimized for all devices (desktop, tablet, mobile)
-- **Dark Theme** - Professional dark mode design that's easy on the eyes
+- **Glassmorphism UI** - Frosted glass effect with backdrop blur
+- **Mint & Crimson Theme** - Modern color scheme with sharp glows
+- **Fully Responsive** - Optimized for desktop, tablet, and mobile
+- **Fixed Sidebar** - Profile section stays visible while scrolling
+- **Interactive Animations** - Smooth transitions and hover effects
+- **Clean Code** - Semantic HTML5, modular CSS, and vanilla JavaScript
 
-### 🛠️ Technical Features
-- **Typing Effect** - Dynamic hero section with rotating job titles
-- **Animated Statistics** - Counter animations for achievements
-- **Skill Progress Bars** - Animated skill level indicators
-- **3D Card Effects** - Interactive project cards with tilt effect
-- **Smooth Scrolling** - Seamless navigation between sections
-- **Scroll-to-Top Button** - Easy navigation back to top
-- **Mobile Navigation** - Hamburger menu for mobile devices
-- **Form Validation** - Contact form with validation
-- **Lazy Loading Ready** - Performance optimized for images
-- **Custom Scrollbar** - Styled scrollbar matching the theme
+## 🛠️ Tech Stack
 
-## 📁 Project Structure
+- **HTML5** - Semantic markup
+- **CSS3** - Glassmorphism, animations, flexbox
+- **JavaScript** - Vanilla JS for interactivity
+- **Font Awesome** - Icon library
+- **Google Fonts** - Inter font family
+
+## � Structure
 
 ```
-Resume/
-├── index.html          # Main HTML file with all sections
-├── styles.css          # Complete styling with animations
-├── script.js           # JavaScript for interactivity
-└── README.md          # This file
+├── index.html          # Main HTML structure
+├── styles.css          # All styling and animations
+├── script.js           # Interactive functionality
+└── README.md           # Documentation
 ```
 
-## 🎯 Sections
+## 🚀 Quick Start
 
-1. **Navigation** - Sticky header with smooth scroll links
-2. **Hero** - Eye-catching introduction with typing animation
-3. **About** - Personal introduction with animated statistics
-4. **Projects** - Showcase of 6 featured engineering projects
-5. **Skills** - Technical expertise with progress bars
-6. **Contact** - Contact form and social links
-7. **Footer** - Additional links and copyright
-
-## 🚀 Getting Started
-
-### Option 1: Open Directly
-Simply open `index.html` in your web browser:
-- Double-click the file
-- Or right-click → Open with → Your browser
-
-### Option 2: Use Live Server (Recommended)
-For the best development experience:
-
-1. **Using VS Code:**
-   - Install "Live Server" extension
-   - Right-click on `index.html`
-   - Select "Open with Live Server"
-
-2. **Using Python:**
-   ```bash
-   # Python 3
-   python -m http.server 8000
-   
-   # Then open: http://localhost:8000
-   ```
-
-3. **Using Node.js:**
-   ```bash
-   npx serve
-   ```
-
-## 🎨 Customization Guide
-
-### 1. Personal Information
-
-**In `index.html`, update:**
-- Line 51: Your name in `<h1>` tag
-- Lines 101-106: About section text
-- Lines 485-497: Contact details (email, phone, location)
-- Line 568: Footer name
-
-### 2. Projects
-
-**To customize projects (starting around line 150):**
-```html
-<h3>Your Project Title</h3>
-<p>Your project description...</p>
+### Direct Open
+```powershell
+start index.html
 ```
 
-Each project card includes:
-- Title
-- Description
-- Tags (technology categories)
-- Tech stack icons
-- Links (external link & GitHub)
+### Local Server (Recommended)
 
-### 3. Skills
+**Python:**
+```powershell
+python -m http.server 8000
+# Open: http://localhost:8000
+```
+
+**Node.js:**
+```powershell
+npx serve
+# or
+npx http-server
+```
+
+## 🎨 Customization
+
+### Personal Info
+Edit `index.html` lines 25-75 (sidebar section):
+- Name, role, email, location
+- LeetCode & CodeChef profile links
+- Social media links
+
+### Content Sections
+- **About**: Lines 95-105
+- **Experience**: Lines 180-210
+- **Skills**: Lines 210-260
+- **Projects**: Lines 265-320
+
+### Color Theme
+Edit CSS variables in `styles.css` (lines 3-40):
+```css
+--primary: #34d399;        /* Mint Green */
+--secondary: #dc2626;      /* Crimson Red */
+--accent: #f97316;         /* Orange */
+```
+
+## 📱 Responsive Breakpoints
+
+- Desktop: 1024px+
+- Tablet: 768px - 1023px
+- Mobile: < 768px
+
+## � Deployment
+
+### GitHub Pages
+1. Push to GitHub repository
+2. Settings → Pages → Deploy from main branch
+3. Your site will be live at: `https://username.github.io/repo-name`
+
+### Netlify
+1. Drag and drop folder to Netlify
+2. Or connect GitHub repository
+3. Auto-deploy on every push
+
+## 📄 License
+
+MIT License - Feel free to use this template for your portfolio.
+
+## 👤 Author
+
+**Sameer Kadam**
+- GitHub: [@Sameer6305](https://github.com/Sameer6305)
+- Portfolio: [Digital-Portfolio](https://github.com/Sameer6305/Digital-Portfolio)
+
+---
+
+⭐ Star this repo if you found it helpful!
 
 **Update skills in three categories (around line 330):**
 - Programming Languages
