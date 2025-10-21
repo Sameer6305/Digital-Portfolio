@@ -150,68 +150,9 @@ function initContactForm() {
     }
 }
 
-// Custom cursor effect
+// Custom cursor effect - Disabled
 function initCursorEffect() {
-    const cursor = document.createElement('div');
-    cursor.className = 'custom-cursor';
-    cursor.style.cssText = `
-        position: fixed;
-        width: 20px;
-        height: 20px;
-        border: 2px solid #fbbf24;
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 9999;
-        transition: all 0.15s ease;
-        transform: translate(-50%, -50%);
-        mix-blend-mode: difference;
-        display: none;
-    `;
-    document.body.appendChild(cursor);
-
-    const cursorDot = document.createElement('div');
-    cursorDot.className = 'cursor-dot';
-    cursorDot.style.cssText = `
-        position: fixed;
-        width: 6px;
-        height: 6px;
-        background: #fbbf24;
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 9999;
-        transition: all 0.1s ease;
-        transform: translate(-50%, -50%);
-        display: none;
-    `;
-    document.body.appendChild(cursorDot);
-
-    // Show custom cursor on desktop only
-    if (window.innerWidth > 768) {
-        cursor.style.display = 'block';
-        cursorDot.style.display = 'block';
-    }
-
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-        cursorDot.style.left = e.clientX + 'px';
-        cursorDot.style.top = e.clientY + 'px';
-    });
-
-    // Expand cursor on hover
-    const interactiveElements = document.querySelectorAll('a, button, .project-item, .service-item');
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursor.style.width = '40px';
-            cursor.style.height = '40px';
-            cursor.style.borderColor = '#f59e0b';
-        });
-        el.addEventListener('mouseleave', () => {
-            cursor.style.width = '20px';
-            cursor.style.height = '20px';
-            cursor.style.borderColor = '#fbbf24';
-        });
-    });
+    // Cursor effect removed for cleaner experience
 }
 
 // Scroll animations

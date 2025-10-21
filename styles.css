@@ -2,10 +2,10 @@
 
 /* === ROOT VARIABLES === */
 :root {
-    /* Glass Effects - High Transparency */
-    --glass-bg: rgba(15, 23, 42, 0.65);
-    --glass-bg-hover: rgba(30, 41, 59, 0.75);
-    --glass-border: rgba(52, 211, 153, 0.18);
+    /* Glass Effects - Solid Frosted Glass */
+    --glass-bg: rgba(15, 23, 42, 0.85);
+    --glass-bg-hover: rgba(30, 41, 59, 0.90);
+    --glass-border: rgba(52, 211, 153, 0.25);
     --glass-shadow: rgba(0, 0, 0, 0.5);
     
     /* Mint & Crimson Bold Theme */
@@ -29,13 +29,13 @@
     --gradient-glass: linear-gradient(135deg, rgba(52, 211, 153, 0.06) 0%, rgba(220, 38, 38, 0.04) 100%);
     --gradient-bg: radial-gradient(ellipse at 30% 50%, #1e293b 0%, #0f172a 50%, #020617 100%);
     
-    /* Vibrant Shadows - Ultra Sharp & Crisp */
-    --shadow-sm: 0 1px 3px rgba(52, 211, 153, 0.3);
-    --shadow-md: 0 2px 6px rgba(52, 211, 153, 0.4);
-    --shadow-lg: 0 3px 10px rgba(52, 211, 153, 0.5);
-    --shadow-xl: 0 4px 14px rgba(52, 211, 153, 0.55);
-    --glow: 0 0 3px rgba(52, 211, 153, 0.85);
-    --glow-accent: 0 0 3px rgba(220, 38, 38, 0.8);
+    /* Vibrant Shadows - Razor Sharp */
+    --shadow-sm: 0 1px 2px rgba(52, 211, 153, 0.4);
+    --shadow-md: 0 2px 4px rgba(52, 211, 153, 0.5);
+    --shadow-lg: 0 2px 6px rgba(52, 211, 153, 0.6);
+    --shadow-xl: 0 3px 8px rgba(52, 211, 153, 0.65);
+    --glow: 0 0 2px rgba(52, 211, 153, 0.95);
+    --glow-accent: 0 0 2px rgba(220, 38, 38, 0.9);
     
     /* Transitions */
     --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -220,10 +220,10 @@ img {
 /* === CONTAINER === */
 .container {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 30px 30px 30px;
     min-height: 100vh;
 }
 
@@ -231,13 +231,13 @@ img {
 .sidebar {
     flex-shrink: 0;
     width: 340px;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 20px;
-    bottom: 20px;
-    align-self: flex-start;
-    max-height: calc(100vh - 40px);
-    overflow: visible;
+    position: fixed;
+    left: calc((100vw - 1400px) / 2 + 30px);
+    top: 30px;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 10;
 }
 
 .sidebar::-webkit-scrollbar {
@@ -252,12 +252,14 @@ img {
 
 .sidebar-content {
     background: var(--glass-bg);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(30px) saturate(200%) brightness(1.1);
+    -webkit-backdrop-filter: blur(30px) saturate(200%) brightness(1.1);
+    border: 2px solid var(--glass-border);
     border-radius: var(--radius-xl);
     padding: 35px;
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-lg), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.2);
     transition: var(--transition-base);
     position: relative;
     overflow: hidden;
@@ -439,11 +441,23 @@ img {
     transition: var(--transition-fast);
 }
 
+.info-icon .platform-logo {
+    width: 22px;
+    height: 22px;
+    color: var(--primary);
+    transition: var(--transition-fast);
+}
+
 .info-item:hover .info-icon {
     background: var(--gradient-primary);
     color: var(--bg-dark);
     transform: scale(1.1) rotate(5deg);
     box-shadow: var(--glow);
+}
+
+.info-item:hover .info-icon .platform-logo {
+    color: var(--bg-dark);
+    transform: scale(1.1);
 }
 
 .info-text {
@@ -531,13 +545,16 @@ img {
 /* === MAIN CONTENT === */
 .main-content {
     flex: 1;
+    margin-left: 360px;
     background: var(--glass-bg);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(30px) saturate(200%) brightness(1.1);
+    -webkit-backdrop-filter: blur(30px) saturate(200%) brightness(1.1);
+    border: 2px solid var(--glass-border);
     border-radius: var(--radius-xl);
     padding: 35px;
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-lg),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.2);
     position: relative;
     overflow: hidden;
     transition: var(--transition-base);
@@ -586,8 +603,10 @@ img {
     border-radius: var(--radius-md);
     transition: var(--transition-fast);
     white-space: nowrap;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .nav-item::before {
@@ -700,10 +719,12 @@ img {
     gap: 20px;
     padding: 28px;
     background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px) saturate(180%) brightness(1.05);
+    -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(1.05);
+    border: 1.5px solid var(--glass-border);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-md),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
     transition: var(--transition-base);
     position: relative;
     overflow: hidden;
@@ -819,9 +840,12 @@ img {
     margin-bottom: 30px;
     padding: 24px;
     background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px) saturate(180%) brightness(1.05);
+    -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(1.05);
+    border: 1.5px solid var(--glass-border);
     border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
     transition: var(--transition-base);
 }
 
