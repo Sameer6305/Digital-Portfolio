@@ -2,40 +2,40 @@
 
 /* === ROOT VARIABLES === */
 :root {
-    /* Glass Effects - Solid Frosted Glass */
-    --glass-bg: rgba(15, 23, 42, 0.85);
-    --glass-bg-hover: rgba(30, 41, 59, 0.90);
-    --glass-border: rgba(52, 211, 153, 0.25);
+    /* Glass Effects - Dark Professional */
+    --glass-bg: rgba(30, 30, 30, 0.9);
+    --glass-bg-hover: rgba(35, 35, 35, 0.95);
+    --glass-border: rgba(60, 60, 60, 0.4);
     --glass-shadow: rgba(0, 0, 0, 0.5);
     
-    /* Mint & Crimson Bold Theme */
-    --primary: #34d399;        /* Mint Green - Fresh & Modern */
-    --primary-dark: #10b981;
-    --primary-light: #6ee7b7;
-    --secondary: #dc2626;      /* Crimson Red - Bold & Energetic */
-    --accent: #f97316;         /* Orange - Vibrant pop */
+    /* Professional Dark Theme - Yellowish Tone */
+    --primary: #fde047;        /* Soft Yellow */
+    --primary-dark: #facc15;
+    --primary-light: #fef08a;
+    --secondary: #6b7280;      /* Gray */
+    --accent: #fde047;         /* Soft Yellow */
     
-    --text-primary: #ecfdf5;   /* Light mint tint */
+    --text-primary: #ffffff;   /* Pure white */
     --text-secondary: #d1d5db; /* Light gray */
-    --text-muted: #6b7280;     /* Medium gray */
+    --text-muted: #9ca3af;     /* Medium gray */
     
-    --bg-dark: #0f172a;        /* Deep Slate */
-    --bg-darker: #020617;      /* Almost Black */
-    --bg-card: #1e293b;        /* Dark Slate */
+    --bg-dark: #1a1a1a;        /* Dark Gray */
+    --bg-darker: #0f0f0f;      /* Very Dark */
+    --bg-card: #1e1e1e;        /* Card Background */
     
-    /* Bold Gradients */
-    --gradient-primary: linear-gradient(135deg, #34d399 0%, #10b981 100%);
-    --gradient-accent: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-    --gradient-glass: linear-gradient(135deg, rgba(52, 211, 153, 0.06) 0%, rgba(220, 38, 38, 0.04) 100%);
-    --gradient-bg: radial-gradient(ellipse at 30% 50%, #1e293b 0%, #0f172a 50%, #020617 100%);
+    /* Professional Gradients */
+    --gradient-primary: linear-gradient(135deg, #fde047 0%, #facc15 100%);
+    --gradient-accent: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(253, 224, 71, 0.05) 0%, rgba(253, 224, 71, 0.02) 100%);
+    --gradient-bg: radial-gradient(ellipse at 30% 50%, #1a1a1a 0%, #0f0f0f 50%, #0f0f0f 100%);
     
-    /* Vibrant Shadows - Razor Sharp */
-    --shadow-sm: 0 1px 2px rgba(52, 211, 153, 0.4);
-    --shadow-md: 0 2px 4px rgba(52, 211, 153, 0.5);
-    --shadow-lg: 0 2px 6px rgba(52, 211, 153, 0.6);
-    --shadow-xl: 0 3px 8px rgba(52, 211, 153, 0.65);
-    --glow: 0 0 2px rgba(52, 211, 153, 0.95);
-    --glow-accent: 0 0 2px rgba(220, 38, 38, 0.9);
+    /* Subtle Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.6);
+    --shadow-lg: 0 6px 12px rgba(0, 0, 0, 0.7);
+    --shadow-xl: 0 8px 16px rgba(0, 0, 0, 0.8);
+    --glow: 0 0 20px rgba(253, 224, 71, 0.3);
+    --glow-accent: 0 0 20px rgba(253, 224, 71, 0.2);
     
     /* Transitions */
     --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -73,7 +73,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Textured Rough Background */
+/* Professional Background */
 body::before {
     content: '';
     position: fixed;
@@ -82,15 +82,14 @@ body::before {
     z-index: -3;
 }
 
-/* Grain/Noise Texture Effect - Static */
+/* Subtle Texture */
 body::after {
     content: '';
     position: fixed;
     inset: 0;
     background-image: 
-        radial-gradient(circle at 10% 20%, rgba(52, 211, 153, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(220, 38, 38, 0.06) 0%, transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(249, 115, 22, 0.05) 0%, transparent 35%);
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.01) 2px, rgba(255, 255, 255, 0.01) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255, 255, 255, 0.01) 2px, rgba(255, 255, 255, 0.01) 4px);
     z-index: -2;
     opacity: 0.5;
 }
@@ -209,12 +208,12 @@ img {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--gradient-primary);
+    background: var(--primary);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--primary);
+    background: var(--primary-dark);
 }
 
 /* === CONTAINER === */
@@ -252,14 +251,12 @@ img {
 
 .sidebar-content {
     background: var(--glass-bg);
-    backdrop-filter: blur(30px) saturate(200%) brightness(1.1);
-    -webkit-backdrop-filter: blur(30px) saturate(200%) brightness(1.1);
-    border: 2px solid var(--glass-border);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius-xl);
     padding: 35px;
-    box-shadow: var(--shadow-lg), 
-                inset 0 1px 0 rgba(255, 255, 255, 0.1),
-                inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-lg);
     transition: var(--transition-base);
     position: relative;
     overflow: hidden;
@@ -547,14 +544,12 @@ img {
     flex: 1;
     margin-left: 360px;
     background: var(--glass-bg);
-    backdrop-filter: blur(30px) saturate(200%) brightness(1.1);
-    -webkit-backdrop-filter: blur(30px) saturate(200%) brightness(1.1);
-    border: 2px solid var(--glass-border);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius-xl);
     padding: 35px;
-    box-shadow: var(--shadow-lg),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1),
-                inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-lg);
     position: relative;
     overflow: hidden;
     transition: var(--transition-base);
@@ -580,9 +575,9 @@ img {
 /* Navigation */
 .nav-bar {
     display: flex;
-    gap: 12px;
-    padding-bottom: 30px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    gap: 30px;
+    padding-bottom: 0;
+    border-bottom: none;
     margin-bottom: 35px;
     position: relative;
     overflow-x: auto;
@@ -598,45 +593,42 @@ img {
     position: relative;
     color: var(--text-muted);
     font-size: 16px;
-    font-weight: 600;
-    padding: 12px 24px;
-    border-radius: var(--radius-md);
+    font-weight: 500;
+    padding: 0 0 10px 0;
+    border-radius: 0;
     transition: var(--transition-fast);
     white-space: nowrap;
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
 }
 
-.nav-item::before {
+.nav-item::after {
     content: '';
     position: absolute;
-    bottom: -32px;
-    left: 50%;
-    transform: translateX(-50%) scaleX(0);
-    width: 80%;
-    height: 3px;
-    background: var(--gradient-primary);
-    border-radius: 2px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: left;
     transition: var(--transition-base);
 }
 
 .nav-item:hover {
     color: var(--text-secondary);
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.1);
+    background: transparent;
 }
 
 .nav-item.active {
     color: var(--primary);
-    background: rgba(251, 191, 36, 0.1);
-    border-color: rgba(251, 191, 36, 0.3);
-    box-shadow: 0 0 20px rgba(251, 191, 36, 0.2);
+    background: transparent;
 }
 
-.nav-item.active::before {
-    transform: translateX(-50%) scaleX(1);
+.nav-item.active::after {
+    transform: scaleX(1);
 }
 
 /* Sections */
@@ -719,12 +711,11 @@ img {
     gap: 20px;
     padding: 28px;
     background: var(--glass-bg);
-    backdrop-filter: blur(20px) saturate(180%) brightness(1.05);
-    -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(1.05);
-    border: 1.5px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md),
-                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow-md);
     transition: var(--transition-base);
     position: relative;
     overflow: hidden;
@@ -742,7 +733,7 @@ img {
 .service-item:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg), var(--glow);
-    border-color: rgba(251, 191, 36, 0.4);
+    border-color: rgba(253, 224, 71, 0.4);
 }
 
 .service-item:hover::before {
